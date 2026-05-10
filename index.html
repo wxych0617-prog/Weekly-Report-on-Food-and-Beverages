@@ -86,12 +86,6 @@ body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#f5f6fa;c
   </div>
 </div>
 
-<!-- 批价快照 -->
-<div class="section">
-  <div class="section-title"><span class="dot"></span>白酒批价快照（2026-05-10）</div>
-  <div class="snapshot-grid" id="snapshots"></div>
-</div>
-
 <!-- 中证白酒指数 + PE -->
 <div class="section">
   <div class="section-title"><span class="dot"></span>中证白酒指数走势与估值</div>
@@ -476,7 +470,6 @@ body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#f5f6fa;c
 
   /* ====== 渲染所有模块 ====== */
   function renderAll() {
-    renderSnapshots();
     renderIndexPE();
     renderHighEnd();
     renderSubHighEnd();
