@@ -238,7 +238,7 @@ body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#f5f6fa;c
 
   /* ── 2. 高端批价 ─────────────────────────────────────────────── */
   function renderHighEnd() {
-    var rows  = [].concat((RAW.sheets["今日酒价_高端"] || {})["主批价数据"] || []).reverse();
+    var rows  = [].concat((RAW.sheets["今日酒价_高端"] || {})["主批价数据"] || []);
     if (!rows.length) return;
     var dates = rows.map(function(r){ return r["日期"]; });
 
@@ -399,8 +399,8 @@ body{font-family:'Microsoft YaHei','PingFang SC',sans-serif;background:#f5f6fa;c
 
   /* ── 7. 牛奶-生鲜乳剪刀差 ───────────────────────────────────── */
   function renderScissors() {
-    var milkData = ((RAW.sheets["牛奶零售价"] || {})["数据"] || []);
-    var rawData  = ((RAW.sheets["生鲜乳价格"] || {})["数据"] || []);
+    var milkData = [].concat((RAW.sheets["牛奶零售价"] || {})["数据"] || []).reverse();
+    var rawData  = [].concat((RAW.sheets["生鲜乳价格"] || {})["数据"] || []).reverse();
     var el = document.getElementById("chart_scissors");
     if (!milkData.length || !rawData.length) {
       if (el) el.innerHTML = '<p style="text-align:center;color:#aaa;padding:40px">暂无数据</p>';
